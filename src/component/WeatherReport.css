@@ -1,0 +1,34 @@
+.Container{
+    height: 100vh;
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.output_box{
+    padding:10px;
+    width: 70%;
+    height: fit-content;
+    background-color: rgba(169, 236, 148, 0.774);
+    box-shadow: 5px 10px #888888;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.output_box > img {
+    margin: 10px;
+    height: 10%;
+    width: 10%;
+    border-radius: 15%;
+    border: 10px;
+    border-color: black;
+    background-color: white;
+}
+
+.output_box > button{
+    margin-top: 10px;
+}
