@@ -34,6 +34,7 @@ function App() {
       description: data.weather[0].description,
     });
     setRes(true);
+    setError(false);
   }catch(err){
     console.log(err.message)
     setError(true)

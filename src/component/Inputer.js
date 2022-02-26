@@ -1,8 +1,9 @@
 import { Input, Button, TextField } from "@material-ui/core";
 import React from "react";
 import "./inputer.css";
+import logo from './logo.png'
 
-const Inputer = ({ city, inputHandler, findWeather,error }) => {
+const Inputer = ({ city, inputHandler, findWeather, error }) => {
   const handleClick = (event) => {
     event.preventDefault();
     findWeather();
@@ -12,28 +13,28 @@ const Inputer = ({ city, inputHandler, findWeather,error }) => {
     <div className="inputBox">
       <div className="inputBox_field">
         <h1>Polar Weather App</h1>
-        <p>Powered by</p>
+        <p>Powered by Ram!</p>
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT58lpIByLEE5T6iJMOMfLhudSIFeKCkt4_YYlsRvDwEizaPP426bB_gFFbv7koM-DpqGo&usqp=CAU"
+          src={logo}
           alt="logo"
         />
         <form>
           <TextField
-            label="Enter the city name"
+            placeholder="Enter the city name"
             name="lastName"
             required
             onChange={inputHandler}
           />
-          <Input
-            type="submit"
+          <Button
             variant="contained"
             color="primary"
+            type="submit"
             onClick={handleClick}
           >
             Search
-          </Input>
+          </Button>
         </form>
-        {error ? "Please Enter the valid city name !": null}
+        {error ? <div className="error">Enter the valid city name !</div> : null}
       </div>
     </div>
   );
