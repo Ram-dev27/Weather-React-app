@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./App.css";
 import Inputer from "./component/Inputer";
 import WeatherReport from "./component/WeatherReport";
+
+const {REACT_APP_API_KEY} = process.env;
 function App() {
-  const APIKEY = "af1ba0f5e10e591f3ae10cdc17997d76";
   const [city, setCity] = useState("");
   const [res, setRes] = useState(false);
   const [error,setError] = useState(false);
@@ -23,7 +24,7 @@ function App() {
   const findWeather = async () => {
     try{
     const data = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${APIKEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${REACT_APP_API_KEY}`
     )
       .then((res) => res.json())
       .then((data) => data);
@@ -40,7 +41,7 @@ function App() {
     setError(true)
   }
   };
-  console.log(city, "App")
+  console.log(city,REACT_APP_API_KEY, process.env, "App")
   return (
     <div className="App">
       {!res ? (
